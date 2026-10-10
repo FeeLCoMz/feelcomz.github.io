@@ -1,1 +1,1009 @@
-sss
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeeLCoMz Studio - Portal Resmi Showcase Aplikasi & Inovasi Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        feelcomz: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            accent: '#a855f7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
+                            '50%': { opacity: '0.9', transform: 'scale(1.03)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #c084fc 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- Sticky Header Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto rounded-2xl glass-panel px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 shadow-xl">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white font-extrabold shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
+                    <span class="text-xl tracking-tighter">F</span>
+                </div>
+                <div class="flex flex-col">
+                    <span id="brand-name-display" class="font-black text-xl tracking-tight text-white flex items-center gap-1.5">
+                        FeeLCoMz <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 uppercase font-semibold">Studio</span>
+                    </span>
+                    <span class="text-[10px] text-slate-400 -mt-1 hidden sm:inline">App Publishing & Digital Innovation Hub</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#apps-showcase" class="hover:text-blue-400 transition-colors">Katalog Aplikasi</a>
+                <a href="#simulator" class="hover:text-blue-400 transition-colors">Coba Demo Live</a>
+                <a href="#advantages" class="hover:text-blue-400 transition-colors">Keunggulan Ekosistem</a>
+                <a href="#beta-lab" class="hover:text-blue-400 transition-colors">FeeLCoMz Lab</a>
+                <a href="#faq" class="hover:text-blue-400 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA & Settings Button -->
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="openConfigModal()" class="p-2.5 rounded-xl glass-card text-slate-300 hover:text-white hover:bg-slate-800 transition-all" title="Pengaturan Info FeeLCoMz">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <a href="#apps-showcase" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-shapes"></i>
+                    <span>Eksplorasi Aplikasi</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-slate-300 hover:text-white rounded-xl focus:outline-none">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-5 flex-col gap-4 text-center border border-slate-800 animate-fadeIn">
+            <a href="#apps-showcase" onclick="toggleMobileMenu()" class="py-2 text-slate-200 hover:text-blue-400 font-medium">Katalog Aplikasi</a>
+            <a href="#simulator" onclick="toggleMobileMenu()" class="py-2 text-slate-200 hover:text-blue-400 font-medium">Coba Demo Live</a>
+            <a href="#advantages" onclick="toggleMobileMenu()" class="py-2 text-slate-200 hover:text-blue-400 font-medium">Keunggulan Ekosistem</a>
+            <a href="#beta-lab" onclick="toggleMobileMenu()" class="py-2 text-slate-200 hover:text-blue-400 font-medium">FeeLCoMz Lab</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="py-2 text-slate-200 hover:text-blue-400 font-medium">FAQ</a>
+            <div class="pt-3 border-t border-slate-800 flex flex-col gap-3">
+                <button onclick="openConfigModal(); toggleMobileMenu();" class="w-full py-2.5 rounded-xl glass-card text-slate-200 hover:text-white text-sm font-medium">
+                    <i class="fa-solid fa-gear mr-2"></i> Pengaturan Informasi
+                </button>
+                <a href="#apps-showcase" onclick="toggleMobileMenu()" class="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold text-sm text-center">
+                    Unduh Aplikasi
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-blue-600/20 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[130px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto space-y-6">
+                <!-- Announcement Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-blue-300 text-xs sm:text-sm font-medium border border-blue-500/30 animate-pulse-glow">
+                    <span class="flex h-2 w-2 rounded-full bg-blue-400 animate-ping"></span>
+                    <span class="text-blue-400 font-bold">FeeLCoMz App Hub</span> — Rumah Inovasi Aplikasi Masa Depan 🚀
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.15] text-white">
+                    Solusi Digital & Aplikasi Cerdas <br class="hidden sm:inline">
+                    <span class="text-gradient" id="hero-tagline-display">Karya Terbaik FeeLCoMz</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p id="hero-desc-display" class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+                    Koleksi aplikasi modern serba bisa untuk meningkatkan produktivitas, mengamankan data, dan mempermudah gaya hidup digital Anda dalam satu ekosistem terpadu.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#apps-showcase" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-shapes"></i>
+                        <span>Lihat Semua Aplikasi</span>
+                    </a>
+                    <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-card hover:bg-slate-800/80 text-slate-200 font-semibold text-base transition-all duration-300 flex items-center justify-center gap-2 group">
+                        <i class="fa-solid fa-play text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        <span>Coba Demo Interaktif</span>
+                    </a>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-900 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User Avatar">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-900 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User Avatar">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-900 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User Avatar">
+                        </div>
+                        <div class="text-left pl-1">
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-300 font-semibold text-xs">4.9/5 Rata-rata Rating</p>
+                        </div>
+                    </div>
+
+                    <div class="h-4 w-[1px] bg-slate-800 hidden sm:block"></div>
+
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-box-archive text-blue-400 text-lg"></i>
+                        <span class="text-slate-200 font-bold">10+</span> Aplikasi Dirilis
+                    </div>
+
+                    <div class="h-4 w-[1px] bg-slate-800 hidden sm:block"></div>
+
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-download text-emerald-400 text-lg"></i>
+                        <span class="text-slate-200 font-bold">1.2M+</span> Total Unduhan
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Mockup Display with Floating Cards -->
+            <div class="mt-14 relative max-w-5xl mx-auto">
+                <div class="relative rounded-3xl p-2 sm:p-4 bg-gradient-to-b from-slate-800/60 to-slate-950/90 border border-slate-800 shadow-2xl backdrop-blur-xl">
+                    <!-- Top Window Bar -->
+                    <div class="flex items-center justify-between px-4 py-2 mb-2 bg-slate-900/80 rounded-xl text-xs text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                            <span class="ml-2 font-mono text-slate-400 hidden sm:inline">https://feelcomz.studio/apps-suite</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-emerald-400 flex items-center gap-1 font-medium"><i class="fa-solid fa-circle text-[8px]"></i> FeeLCoMz Ecosystem Online</span>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot Preview -->
+                    <div class="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 aspect-[16/9] flex items-center justify-center group">
+                        <img id="main-mockup-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&auto=format&fit=crop&q=80" alt="FeeLCoMz App Suite" class="w-full h-full object-cover object-top filter brightness-90 group-hover:scale-105 transition-transform duration-700">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+
+                        <!-- Central Overlay Info -->
+                        <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+                            <div class="space-y-1">
+                                <span class="px-3 py-1 rounded-md bg-blue-500/30 text-blue-300 text-xs font-semibold backdrop-blur-md border border-blue-400/20">FeeLCoMz Suite v3.0</span>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Satu Akun FeeLCoMz ID Untuk Semua Aplikasi</h3>
+                                <p class="text-xs md:text-sm text-slate-300">Nikmati sinkronisasi awan otomatis antar aplikasi tanpa batasan perangkat.</p>
+                            </div>
+                            <button onclick="scrollToSimulator()" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold backdrop-blur-md border border-white/20 transition-all flex items-center gap-2">
+                                <span>Coba Demo Interaktif</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Card Left -->
+                <div class="hidden lg:flex absolute -left-12 top-1/3 glass-panel p-4 rounded-2xl border border-blue-500/30 shadow-2xl animate-float items-center gap-4 max-w-xs z-20">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400">FlowCraft AI</p>
+                        <p class="text-sm font-bold text-white">Smart Task & Workflow</p>
+                        <p class="text-[10px] text-emerald-400 mt-1">✓ Update v2.4 Tersedia</p>
+                    </div>
+                </div>
+
+                <!-- Floating Card Right -->
+                <div class="hidden lg:flex absolute -right-12 bottom-1/4 glass-panel p-4 rounded-2xl border border-purple-500/30 shadow-2xl animate-float items-center gap-4 max-w-xs z-20" style="animation-delay: 2s;">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400">Vaultify Pass</p>
+                        <p class="text-sm font-semibold text-white">Keamanan Enkripsi End-to-End</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Perlindungan Data Maksimal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Catalog Showcase Section -->
+    <section id="apps-showcase" class="py-24 relative bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
+                <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold uppercase tracking-wider border border-blue-500/20">Katalog Karya FeeLCoMz</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Temukan Aplikasi Sesuai Kebutuhan Anda</h2>
+                <p class="text-slate-400 text-base">Seluruh aplikasi dirancang dengan performa cepat, tanpa iklan mengganggu, dan berfokus pada privasi pengguna.</p>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-2 pt-4">
+                    <button onclick="filterApps('all')" class="app-filter-btn px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold text-xs transition-all shadow-md">Semua Aplikasi</button>
+                    <button onclick="filterApps('productivity')" class="app-filter-btn px-4 py-2 rounded-xl glass-card text-slate-300 hover:text-white font-semibold text-xs transition-all">Produktivitas</button>
+                    <button onclick="filterApps('utility')" class="app-filter-btn px-4 py-2 rounded-xl glass-card text-slate-300 hover:text-white font-semibold text-xs transition-all">Utilitas & Keamanan</button>
+                    <button onclick="filterApps('ai')" class="app-filter-btn px-4 py-2 rounded-xl glass-card text-slate-300 hover:text-white font-semibold text-xs transition-all">AI Tools</button>
+                </div>
+            </div>
+
+            <!-- Apps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- App 1: FlowCraft AI -->
+                <div class="app-card productivity ai glass-card p-6 rounded-3xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-start mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-blue-500/20">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-bold border border-blue-500/20">Unggulan</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">FlowCraft AI</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Aplikasi manajemen tugas & alur kerja cerdas yang mengotomatiskan jadwal harian dengan bantuan AI.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-android text-emerald-400 mr-1"></i>Android</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-apple text-slate-200 mr-1"></i>iOS</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-solid fa-globe text-cyan-400 mr-1"></i>Web App</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400 font-medium">Rating: <strong class="text-amber-400">4.9 ★</strong></span>
+                        <button onclick="openAppDetail('FlowCraft AI')" class="px-4 py-2 rounded-xl bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white font-semibold text-xs border border-blue-500/30 transition-all flex items-center gap-1.5">
+                            <span>Unduh</span>
+                            <i class="fa-solid fa-arrow-down-long text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- App 2: Vaultify Pass -->
+                <div class="app-card utility glass-card p-6 rounded-3xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-start mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-purple-500/20">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-400 text-[11px] font-bold border border-purple-500/20">Keamanan</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Vaultify Pass</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Pengelola kata sandi dan brankas dokumen rahasia terenkripsi AES-256 tanpa pelacakan data.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-android text-emerald-400 mr-1"></i>Android</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-windows text-blue-400 mr-1"></i>Windows</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400 font-medium">Rating: <strong class="text-amber-400">4.8 ★</strong></span>
+                        <button onclick="openAppDetail('Vaultify Pass')" class="px-4 py-2 rounded-xl bg-purple-600/20 hover:bg-purple-600 text-purple-300 hover:text-white font-semibold text-xs border border-purple-500/30 transition-all flex items-center gap-1.5">
+                            <span>Unduh</span>
+                            <i class="fa-solid fa-arrow-down-long text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- App 3: TaskPulse -->
+                <div class="app-card productivity glass-card p-6 rounded-3xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-start mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-emerald-500/20">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-bold border border-emerald-500/20">Produktivitas</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">TaskPulse Habit Tracker</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Aplikasi pelacak kebiasaan harian dan pengukur fokus dengan visualisasi statistik interaktif.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-android text-emerald-400 mr-1"></i>Android</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-apple text-slate-200 mr-1"></i>iOS</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400 font-medium">Rating: <strong class="text-amber-400">4.9 ★</strong></span>
+                        <button onclick="openAppDetail('TaskPulse')" class="px-4 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white font-semibold text-xs border border-emerald-500/30 transition-all flex items-center gap-1.5">
+                            <span>Unduh</span>
+                            <i class="fa-solid fa-arrow-down-long text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- App 4: EchoMind AI Transcriber -->
+                <div class="app-card ai glass-card p-6 rounded-3xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-start mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-600 to-blue-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-cyan-500/20">
+                                <i class="fa-solid fa-microphone-lines"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-[11px] font-bold border border-cyan-500/20">AI Tool</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">EchoMind Voice AI</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Pengubah rekaman suara rapat & kuliah menjadi teks rangkuman otomatis secara cepat dan akurat.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-solid fa-globe text-cyan-400 mr-1"></i>Web Browser</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-android text-emerald-400 mr-1"></i>Android</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400 font-medium">Rating: <strong class="text-amber-400">4.7 ★</strong></span>
+                        <button onclick="openAppDetail('EchoMind Voice AI')" class="px-4 py-2 rounded-xl bg-cyan-600/20 hover:bg-cyan-600 text-cyan-300 hover:text-white font-semibold text-xs border border-cyan-500/30 transition-all flex items-center gap-1.5">
+                            <span>Unduh</span>
+                            <i class="fa-solid fa-arrow-down-long text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- App 5: SnapMetrics -->
+                <div class="app-card utility glass-card p-6 rounded-3xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-start mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-600 to-orange-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-amber-500/20">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-[11px] font-bold border border-amber-500/20">Keuangan</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">SnapMetrics Finance</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Aplikasi pencatat keuangan usaha kecil & anggaran pribadi dengan fitur scan struk otomatis.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-android text-emerald-400 mr-1"></i>Android</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-apple text-slate-200 mr-1"></i>iOS</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400 font-medium">Rating: <strong class="text-amber-400">4.8 ★</strong></span>
+                        <button onclick="openAppDetail('SnapMetrics Finance')" class="px-4 py-2 rounded-xl bg-amber-600/20 hover:bg-amber-600 text-amber-300 hover:text-white font-semibold text-xs border border-amber-500/30 transition-all flex items-center gap-1.5">
+                            <span>Unduh</span>
+                            <i class="fa-solid fa-arrow-down-long text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- App 6: Zenith Markdown Notes -->
+                <div class="app-card productivity glass-card p-6 rounded-3xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border border-slate-800">
+                    <div>
+                        <div class="flex justify-between items-start mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-indigo-500/20">
+                                <i class="fa-solid fa-note-sticky"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-[11px] font-bold border border-indigo-500/20">Produktivitas</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Zenith AI Notes</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Aplikasi catatan Markdown super ringan dengan sinkronisasi instan dan pengorganisir tag otomatis.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-windows text-blue-400 mr-1"></i>Windows</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-apple text-slate-200 mr-1"></i>macOS</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300"><i class="fa-brands fa-linux text-amber-400 mr-1"></i>Linux</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-slate-400 font-medium">Rating: <strong class="text-amber-400">4.9 ★</strong></span>
+                        <button onclick="openAppDetail('Zenith AI Notes')" class="px-4 py-2 rounded-xl bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white font-semibold text-xs border border-indigo-500/30 transition-all flex items-center gap-1.5">
+                            <span>Unduh</span>
+                            <i class="fa-solid fa-arrow-down-long text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-App Interactive Phone Simulator -->
+    <section id="simulator" class="py-24 bg-slate-900/60 border-y border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold uppercase tracking-wider border border-purple-500/20">Demo Interaktif Simulator</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Uji Coba Aplikasi FeeLCoMz Secara Live</h2>
+                <p class="text-slate-400 text-base">Pilih aplikasi di bawah ini untuk melihat antarmuka dan mencoba fiturnya secara instan langsung dari layar browser Anda.</p>
+            </div>
+
+            <!-- Phone Simulator Container -->
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Control Buttons Left -->
+                <div class="md:col-span-5 space-y-4">
+                    <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Pilih Preview Aplikasi:</p>
+                    
+                    <!-- App 1 Select -->
+                    <button onclick="switchSimApp('flowcraft')" id="sim-btn-flowcraft" class="sim-tab-btn w-full p-4 rounded-2xl text-left border transition-all flex items-center gap-4 bg-blue-600/20 border-blue-500 text-white shadow-lg">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">FlowCraft AI</h4>
+                            <p class="text-xs text-slate-300">Manajemen Tugas & Chat Bot AI</p>
+                        </div>
+                    </button>
+
+                    <!-- App 2 Select -->
+                    <button onclick="switchSimApp('vaultify')" id="sim-btn-vaultify" class="sim-tab-btn w-full p-4 rounded-2xl text-left border border-slate-800 glass-card text-slate-400 hover:text-white hover:border-slate-700 transition-all flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Vaultify Pass</h4>
+                            <p class="text-xs text-slate-400">Brankas Password & Enkripsi</p>
+                        </div>
+                    </button>
+
+                    <!-- App 3 Select -->
+                    <button onclick="switchSimApp('taskpulse')" id="sim-btn-taskpulse" class="sim-tab-btn w-full p-4 rounded-2xl text-left border border-slate-800 glass-card text-slate-400 hover:text-white hover:border-slate-700 transition-all flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">TaskPulse Habit Tracker</h4>
+                            <p class="text-xs text-slate-400">Statistik Kebiasaan & Target Harian</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Smartphone Frame Graphic Right -->
+                <div class="md:col-span-7 flex justify-center">
+                    <div class="w-full max-w-[340px] h-[640px] bg-slate-950 rounded-[45px] p-3 border-[6px] border-slate-800 shadow-2xl relative flex flex-col overflow-hidden ring-1 ring-slate-700">
+                        <!-- Phone Notch / Camera -->
+                        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-5 bg-slate-900 rounded-full z-30 flex items-center justify-center gap-2">
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-800"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-900"></div>
+                        </div>
+
+                        <!-- Phone Top Bar -->
+                        <div class="pt-8 px-4 pb-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between text-xs text-slate-300 shrink-0">
+                            <span id="sim-app-title" class="font-bold text-white flex items-center gap-1.5">
+                                <i class="fa-solid fa-bolt text-blue-400"></i> FlowCraft AI
+                            </span>
+                            <div class="flex items-center gap-2 text-[10px]">
+                                <i class="fa-solid fa-signal"></i>
+                                <i class="fa-solid fa-wifi"></i>
+                                <i class="fa-solid fa-battery-full text-emerald-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Phone Screen Content -->
+                        <div id="sim-screen-content" class="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
+                            <!-- FlowCraft View -->
+                            <div id="view-flowcraft" class="space-y-3">
+                                <div class="p-3 rounded-xl bg-blue-600/20 border border-blue-500/30">
+                                    <p class="text-[10px] text-blue-300 font-semibold">FEE LCOMZ ID ACTIVE</p>
+                                    <p class="text-sm font-bold text-white">Selamat Datang, Pengguna 👋</p>
+                                    <p class="text-[11px] text-slate-400 mt-1">3 Tugas otomatis diselesaikan oleh AI.</p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <p class="font-bold text-white text-[11px]">Daftar Tugas Interaktif:</p>
+                                    <label class="flex items-center gap-2.5 p-2 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer">
+                                        <input type="checkbox" checked class="accent-blue-500 w-4 h-4">
+                                        <span class="line-through text-slate-500">Review Desain FeeLCoMz Hub</span>
+                                    </label>
+                                    <label class="flex items-center gap-2.5 p-2 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer">
+                                        <input type="checkbox" class="accent-blue-500 w-4 h-4">
+                                        <span class="text-slate-200">Rilis Update v2.4 APK</span>
+                                    </label>
+                                </div>
+
+                                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+                                    <span class="text-white font-semibold text-[11px]">AI Assistant Prompt:</span>
+                                    <div class="flex gap-1">
+                                        <input id="flowcraft-chat-input" type="text" placeholder="Tanya AI FeeLCoMz..." class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-[11px] text-white">
+                                        <button onclick="sendSimMessage()" class="px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold"><i class="fa-solid fa-paper-plane"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vaultify View -->
+                            <div id="view-vaultify" class="hidden space-y-3">
+                                <div class="p-3 rounded-xl bg-purple-600/20 border border-purple-500/30 text-center">
+                                    <i class="fa-solid fa-lock text-2xl text-purple-400 mb-1"></i>
+                                    <p class="text-xs font-bold text-white">Brankas Terkunci Aman</p>
+                                    <p class="text-[10px] text-slate-400">Enkripsi 256-bit Aktif</p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <p class="font-bold text-white text-[11px]">Akun Tersimpan:</p>
+                                    <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex justify-between items-center">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-brands fa-google text-rose-400"></i>
+                                            <span class="text-slate-200">Google Workspace</span>
+                                        </div>
+                                        <button onclick="showToast('Password disalin ke clipboard!')" class="text-[10px] px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded-md text-slate-300">Salin</button>
+                                    </div>
+                                    <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex justify-between items-center">
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-brands fa-github text-white"></i>
+                                            <span class="text-slate-200">GitHub Developer</span>
+                                        </div>
+                                        <button onclick="showToast('Password disalin ke clipboard!')" class="text-[10px] px-2 py-1 bg-slate-800 hover:bg-slate-700 rounded-md text-slate-300">Salin</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TaskPulse View -->
+                            <div id="view-taskpulse" class="hidden space-y-3">
+                                <div class="p-3 rounded-xl bg-emerald-600/20 border border-emerald-500/30">
+                                    <p class="text-[10px] text-emerald-300 font-semibold">STREAK HARIAN: 14 HARI 🔥</p>
+                                    <p class="text-xs font-bold text-white">Progres Kebiasaan MINGGU INI</p>
+                                    <div class="w-full bg-slate-800 h-2 rounded-full mt-2 overflow-hidden">
+                                        <div class="bg-emerald-400 h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                                        <p class="text-[9px] text-slate-400">Fokus Hari Ini</p>
+                                        <p class="text-sm font-bold text-white">3.5 Jam</p>
+                                    </div>
+                                    <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                                        <p class="text-[9px] text-slate-400">Target Selesai</p>
+                                        <p class="text-sm font-bold text-emerald-400">9/10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone Navigation Bar -->
+                        <div class="p-2 bg-slate-900 border-t border-slate-800 flex justify-around text-slate-500 text-sm shrink-0">
+                            <button onclick="switchSimApp('flowcraft')" class="hover:text-blue-400 p-1"><i class="fa-solid fa-bolt"></i></button>
+                            <button onclick="switchSimApp('vaultify')" class="hover:text-purple-400 p-1"><i class="fa-solid fa-shield-halved"></i></button>
+                            <button onclick="switchSimApp('taskpulse')" class="hover:text-emerald-400 p-1"><i class="fa-solid fa-chart-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem & Advantages Section -->
+    <section id="advantages" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider border border-emerald-500/20">Mengapa Memilih FeeLCoMz?</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Standar Kualitas Di Setiap Aplikasi</h2>
+                <p class="text-slate-400 text-base">Setiap perangkat lunak yang dirilis oleh FeeLCoMz melewati proses pengujian ketat untuk memberikan pengalaman terbaik.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Advantage 1 -->
+                <div class="glass-card p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 border border-slate-800">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Ringan & Tanpa Bloatware</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Aplikasi dirancang hemat daya, berukuran kecil, dan tidak membebani memori RAM perangkat Anda.</p>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="glass-card p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 border border-slate-800">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Privasi Tanpa Kompromi</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Kami tidak menjual data pribadi Anda. Seluruh pemrosesan dilakukan secara lokal atau dengan enkripsi kuat.</p>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="glass-card p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2 border border-slate-800">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-rotate"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pembaruan Berkala</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Tim FeeLCoMz secara aktif mendengarkan masukan pengguna dan memberikan fitur baru secara rutin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FeeLCoMz Beta Lab Section -->
+    <section id="beta-lab" class="py-20 relative overflow-hidden bg-slate-900/40 border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="rounded-3xl bg-gradient-to-r from-blue-950 via-indigo-900 to-purple-950 border border-blue-500/30 p-8 sm:p-14 text-center space-y-6 shadow-2xl relative overflow-hidden">
+                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-400/30 uppercase tracking-wider">
+                    🧪 FeeLCoMz Beta Lab
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Ingin Menjadi Orang Pertama Yang Mencoba Aplikasi Baru?</h2>
+                <p class="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
+                    Dapatkan akses eksklusif ke proyek eksperimental dan versi beta sebelum resmi dirilis di Play Store atau App Store.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto pt-2">
+                    <input type="email" placeholder="Masukkan email Anda..." class="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-4 py-3 text-white text-xs focus:outline-none focus:border-blue-500">
+                    <button onclick="showToast('Terima kasih! Anda terdaftar dalam program FeeLCoMz Beta Tester.')" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs whitespace-nowrap shadow-lg shadow-blue-500/30 transition-all">
+                        Gabung Beta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider border border-cyan-500/20">Pertanyaan Umum</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Pertanyaan Seputar FeeLCoMz Studio</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden">
+                    <button onclick="toggleFaq('faq-1')" class="w-full p-5 text-left font-bold text-white text-sm sm:text-base flex justify-between items-center gap-4 hover:bg-slate-800/50 transition">
+                        <span>Apakah semua aplikasi FeeLCoMz gratis diunduh?</span>
+                        <i id="faq-1-icon" class="fa-solid fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-1" class="hidden p-5 pt-0 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/50">
+                        Sebagian besar aplikasi FeeLCoMz menyediakan versi gratis penuh (Starter) yang dapat langsung digunakan tanpa batas waktu. Kami juga menyediakan opsi fitur premium untuk penggunaan profesional.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden">
+                    <button onclick="toggleFaq('faq-2')" class="w-full p-5 text-left font-bold text-white text-sm sm:text-base flex justify-between items-center gap-4 hover:bg-slate-800/50 transition">
+                        <span>Bagaimana cara menyampaikan masukan atau meminta fitur baru?</span>
+                        <i id="faq-2-icon" class="fa-solid fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-2" class="hidden p-5 pt-0 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/50">
+                        Anda dapat mengirimkan masukan langsung dari dalam aplikasi melalui menu "Bantuan & Feedback", atau bergabung dalam komunitas FeeLCoMz Beta Lab.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden">
+                    <button onclick="toggleFaq('faq-3')" class="w-full p-5 text-left font-bold text-white text-sm sm:text-base flex justify-between items-center gap-4 hover:bg-slate-800/50 transition">
+                        <span>Apakah data saya terhubung di semua aplikasi FeeLCoMz?</span>
+                        <i id="faq-3-icon" class="fa-solid fa-chevron-down text-blue-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-3" class="hidden p-5 pt-0 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/50">
+                        Ya! Dengan menggunakan satu **FeeLCoMz ID**, profil dan preferensi Anda tersinkronisasi secara otomatis di seluruh ekosistem aplikasi kami.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 pt-16 pb-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <!-- Brand Info -->
+                <div class="col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                            F
+                        </div>
+                        <span class="font-bold text-white text-base">FeeLCoMz Studio</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed">
+                        Rumah pengembangan aplikasi dan solusi perangkat lunak inovatif berfokus pada kualitas, kecepatan, dan privasi.
+                    </p>
+                    <div class="flex gap-4 text-slate-400 text-lg">
+                        <a href="#" class="hover:text-blue-400"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-white text-sm">Aplikasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#apps-showcase" class="hover:text-white">FlowCraft AI</a></li>
+                        <li><a href="#apps-showcase" class="hover:text-white">Vaultify Pass</a></li>
+                        <li><a href="#apps-showcase" class="hover:text-white">TaskPulse</a></li>
+                        <li><a href="#apps-showcase" class="hover:text-white">EchoMind AI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-white text-sm">FeeLCoMz Studio</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Tentang Perusahaan</a></li>
+                        <li><a href="#beta-lab" class="hover:text-white">FeeLCoMz Lab</a></li>
+                        <li><a href="#" class="hover:text-white">Blog Inovasi</a></li>
+                        <li><a href="#" class="hover:text-white">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 3 -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-white text-sm">Dukungan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-white">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+                <p>&copy; 2026 FeeLCoMz Studio. Hak Cipta Dilindungi Undang-Undang.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400">Privasi</a>
+                    <a href="#" class="hover:text-slate-400">Ketentuan</a>
+                    <a href="#" class="hover:text-slate-400">Keamanan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Configurator Modal -->
+    <div id="config-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel max-w-lg w-full rounded-3xl p-6 border border-slate-700 shadow-2xl space-y-6">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                <h3 class="font-bold text-lg text-white flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-blue-400"></i> Pengaturan Informasi Perusahaan
+                </h3>
+                <button onclick="closeConfigModal()" class="text-slate-400 hover:text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-slate-300 font-semibold mb-1">Nama Perusahaan / Studio</label>
+                    <input id="input-brand-name" type="text" value="FeeLCoMz" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 font-semibold mb-1">Tagline Utama</label>
+                    <input id="input-hero-tagline" type="text" value="Karya Terbaik FeeLCoMz" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-blue-500">
+                </div>
+
+                <div>
+                    <label class="block text-slate-300 font-semibold mb-1">Deskripsi Profil Studio</label>
+                    <textarea id="input-hero-desc" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-blue-500">Koleksi aplikasi modern serba bisa untuk meningkatkan produktivitas, mengamankan data, dan mempermudah gaya hidup digital Anda dalam satu ekosistem terpadu.</textarea>
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <button onclick="closeConfigModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-medium text-xs">Batal</button>
+                <button onclick="saveBrandConfig()" class="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-500/30">
+                    Simpan Perubahan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden transition-all duration-300 transform translate-y-4">
+        <div class="glass-panel px-5 py-3.5 rounded-2xl border border-blue-500/40 text-white text-xs font-semibold shadow-2xl flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
+            <span id="toast-message">Notifikasi</span>
+        </div>
+    </div>
+
+    <script>
+        // Navbar Scroll Styling
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Scroll Helper
+        function scrollToSimulator() {
+            document.getElementById('simulator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // App Catalog Filter Logic
+        function filterApps(category) {
+            const cards = document.querySelectorAll('.app-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            document.querySelectorAll('.app-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('glass-card', 'text-slate-300');
+            });
+
+            event.currentTarget.classList.add('bg-blue-600', 'text-white');
+            event.currentTarget.classList.remove('glass-card', 'text-slate-300');
+        }
+
+        // Simulator App Switching
+        function switchSimApp(app) {
+            // Views
+            document.getElementById('view-flowcraft').classList.add('hidden');
+            document.getElementById('view-vaultify').classList.add('hidden');
+            document.getElementById('view-taskpulse').classList.add('hidden');
+            document.getElementById(`view-${app}`).classList.remove('hidden');
+
+            const titles = {
+                'flowcraft': '<i class="fa-solid fa-bolt text-blue-400"></i> FlowCraft AI',
+                'vaultify': '<i class="fa-solid fa-shield-halved text-purple-400"></i> Vaultify Pass',
+                'taskpulse': '<i class="fa-solid fa-chart-line text-emerald-400"></i> TaskPulse Tracker'
+            };
+            document.getElementById('sim-app-title').innerHTML = titles[app];
+
+            // Tab button styles
+            document.querySelectorAll('.sim-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600/20', 'border-blue-500', 'text-white');
+                btn.classList.add('border-slate-800', 'glass-card', 'text-slate-400');
+            });
+
+            const activeBtn = document.getElementById(`sim-btn-${app}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-blue-600/20', 'border-blue-500', 'text-white');
+                activeBtn.classList.remove('border-slate-800', 'text-slate-400');
+            }
+        }
+
+        // Send Chat Message Simulator
+        function sendSimMessage() {
+            const input = document.getElementById('flowcraft-chat-input');
+            if (input && input.value.trim() !== '') {
+                showToast(`Pesan "${input.value}" dikirim ke FeeLCoMz AI Bot!`);
+                input.value = '';
+            }
+        }
+
+        // FAQ Accordion
+        function toggleFaq(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(`${id}-icon`);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Modal Config Functions
+        function openConfigModal() {
+            document.getElementById('config-modal').classList.remove('hidden');
+        }
+
+        function closeConfigModal() {
+            document.getElementById('config-modal').classList.add('hidden');
+        }
+
+        function saveBrandConfig() {
+            const brand = document.getElementById('input-brand-name').value;
+            const tagline = document.getElementById('input-hero-tagline').value;
+            const desc = document.getElementById('input-hero-desc').value;
+
+            if (brand) {
+                document.getElementById('brand-name-display').childNodes[0].nodeValue = brand + ' ';
+            }
+            if (tagline) {
+                document.getElementById('hero-tagline-display').innerText = tagline;
+            }
+            if (desc) {
+                document.getElementById('hero-desc-display').innerText = desc;
+            }
+
+            closeConfigModal();
+            showToast('Informasi FeeLCoMz berhasil diperbarui!');
+        }
+
+        // App Detail Action
+        function openAppDetail(appName) {
+            showToast(`Memulai pengunduhan file installer untuk ${appName}...`);
+        }
+
+        // Toast Feedback helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = message;
+            toast.classList.remove('hidden', 'translate-y-4');
+            toast.classList.add('translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.add('hidden', 'translate-y-4');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
